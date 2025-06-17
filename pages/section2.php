@@ -182,7 +182,8 @@
     </div>
   </div>
 </div>
-<br>
-     <button class="btn-visiter" ><a>Visiter</a></button>   
+</div>
+  <br>
+       <center> <button class="btn-visiter">Voir plus</button></center>  
 
   </section>
