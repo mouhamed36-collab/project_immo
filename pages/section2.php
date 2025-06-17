@@ -183,6 +183,7 @@
   </div>
 </div>
 </div>
+  <br>
        <center> <button class="btn-visiter">Voir plus</button></center>  
 
   </section>
