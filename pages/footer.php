@@ -1,20 +1,6 @@
-
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    footer {
-      background-color: #DDC7BB;
-      color: #2B1B12;
-      padding: 40px 0;
-    }
-    footer a {
-      color: #2B1B12;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: #72452b;
-    }
-  </style>
+  <link rel="stylesheet" href="/project_immo/css/footer.css">
 </head>
 
 
@@ -31,10 +17,10 @@
         <textarea rows="5" placeholder="Entrez votre message..." class="form-control"></textarea>
       </div>
       <div class="col-md-2">
-        <button type="submit" style="background-color: #2B1B12; ;" class="btn btn-primary w-100">Envoyer</button>
+        <button type="submit" style="background-color: #2B1B12; color: #DDC7BB" class="btn btn-primary w-100">Envoyer</button>
       </div>
     </form>
-  </div> 
+  </div>
 </section>
 
 <!-- Footer -->
@@ -90,4 +76,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
