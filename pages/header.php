@@ -22,10 +22,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav me-3">
           <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Biens</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section2">Service</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sectionbien">Biens</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Avis</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
         <a href="#" class="btn btn-outline-dark me-2">Se connecter</a>
         <a href="./pages/inscription.php" class="btn btn-dark">S'inscrire</a>

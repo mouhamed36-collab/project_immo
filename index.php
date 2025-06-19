@@ -7,3 +7,5 @@ include_once('pages/section2.php');
 
 //footer de la page d'accueil
 include_once('pages/footer.php');
+
+
