@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="/project_immo/css/section2.css">
 </head>
 <section>
-  <h3 style="text-align: center;color: #2B1B12;">Pourquoi nous choisir</h3>
+  <h3 style="text-align: center;color: #2B1B12;" id="section2">Pourquoi nous choisir</h3>
   <p style="text-align: center;color: #2B1B12;">Améliorez votre expérience d'achat d’hébergement avec expertise, intégrité et un service personnalisé inégalé</p>
   <div class="layout-row mt-5">
     <!-- Layout 1 -->
@@ -36,7 +36,7 @@
     </div>
   </div>
   <!-- contenu pour hebergement -->
-  <h3 style="text-align: center;color: #2B1B12; margin-top:70px;">Nos hébergements populaires</h3>
+  <h3 style="text-align: center;color: #2B1B12; margin-top:70px;" id="sectionbien">Nos hébergements populaires</h3>
   <div class="layout-row mt-5 mb-5">
     <div class="container d-flex justify-content-between">
       <!-- Card 1 -->
@@ -88,7 +88,7 @@
       </div>
     </div>
   </div>
-  <center> <button class="btn-visiter"><a href="#" id="voir">Voir plus</a></button></center>
+  <center> <button class="btn-visiter"><a href="./pages/biens.php" id="voir">Voir plus</a></button> </center>
   <br>
 
 </section>

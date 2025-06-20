@@ -7,7 +7,7 @@
 <!-- Section Contact -->
 <section class="py-5 bg-light text-center">
   <div class="container">
-    <h2 class="mb-3">Avez-vous des questions ?</h2>
+    <h2 class="mb-3" id="contact">Avez-vous des questions ?</h2>
     <p class="mb-4">Laissez-nous vous aider</p>
     <form class="row g-3 justify-content-center">
       <div class="col-md-4">
