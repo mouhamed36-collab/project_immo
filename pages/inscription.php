@@ -204,7 +204,7 @@
                     <div class="text-center mt-4">
                         <p class="text-muted mb-0">
                             Vous avez déjà un compte ?
-                            <a href="#" class="text-decoration-none fw-medium" style="color: #2B1B12;">Se connecter</a>
+                            <a href="../pages/page de connexion.php" class="text-decoration-none fw-medium" style="color: #2B1B12;">Se connecter</a>
                         </p>
                     </div>
                 </div>
