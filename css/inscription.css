@@ -1,0 +1,383 @@
+/* Custom CSS for Registration Page */
+
+/* Background and Layout */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../asset/img/img 1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+/* Decorative Elements */
+.decorative-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+}
+
+.decoration-1 {
+    top: 10%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.decoration-2 {
+    bottom: 10%;
+    right: 10%;
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 123, 255, 0.2);
+}
+
+.decoration-3 {
+    top: 50%;
+    left: 25%;
+    width: 60px;
+    height: 60px;
+    background: rgba(108, 117, 125, 0.2);
+}
+
+/* Registration Card */
+.registration-card {
+    background: #FBF5F1;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.registration-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo Animation */
+.logo i {
+    transition: all 0.3s ease;
+}
+
+.logo:hover i {
+    transform: scale(1.1);
+    color: #0d6efd !important;
+}
+
+/* Form Styling */
+.form-label {
+    color: #495057;
+    margin-bottom: 0.75rem;
+}
+
+.input-group-text {
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.form-control {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+    background: rgba(255, 255, 255, 1);
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+/* Password Strength Indicator */
+.password-strength .progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+}
+
+.password-strength .progress-bar {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.strength-very-weak .progress-bar {
+    background-color: #dc3545;
+    width: 20%;
+}
+
+.strength-weak .progress-bar {
+    background-color: #fd7e14;
+    width: 40%;
+}
+
+.strength-fair .progress-bar {
+    background-color: #ffc107;
+    width: 60%;
+}
+
+.strength-good .progress-bar {
+    background-color: #20c997;
+    width: 80%;
+}
+
+.strength-strong .progress-bar {
+    background-color: #198754;
+    width: 100%;
+}
+
+.password-requirements small {
+    transition: all 0.3s ease;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: linear-gradient(135deg, #8f705f 0%, #2B1B12 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 0.875rem 2rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.3);
+    background: linear-gradient(135deg, #0b5ed7 0%, #5a32a3 100%);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Toggle Password Buttons */
+.btn-outline-secondary {
+    border-color: #dee2e6;
+    color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+
+/* Validation Styles */
+.form-control.is-invalid {
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+.form-control.is-valid {
+    border-color: #198754;
+    background-color: rgba(25, 135, 84, 0.05);
+}
+
+.input-group .form-control.is-invalid~.btn {
+    border-color: #dc3545;
+}
+
+.input-group .form-control.is-valid~.btn {
+    border-color: #198754;
+}
+
+.invalid-feedback {
+    display: block;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Alert Messages */
+.alert {
+    border-radius: 12px;
+    border: none;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.alert-success {
+    background-color: rgba(25, 135, 84, 0.1);
+    color: #0f5132;
+    border-left: 4px solid #198754;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #842029;
+    border-left: 4px solid #dc3545;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.registration-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-card {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+        border-radius: 16px;
+    }
+
+    .decoration {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .registration-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+/* Loading Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Focus Styles for Accessibility */
+.btn:focus,
+.form-control:focus {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .registration-card {
+        background: white;
+        border: 2px solid #000;
+    }
+
+    .form-control {
+        border: 2px solid #000;
+    }
+
+    .submit-btn {
+        background: #000;
+        color: white;
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
