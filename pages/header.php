@@ -27,7 +27,7 @@
           <li class="nav-item"><a class="nav-link" href="#">Avis</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        <a href="#" class="btn btn-outline-dark me-2">Se connecter</a>
+        <a href="./pages/page de connexion.php" class="btn btn-outline-dark me-2">Se connecter</a>
         <a href="./pages/inscription.php" class="btn btn-dark">S'inscrire</a>
       </div>
     </div>
