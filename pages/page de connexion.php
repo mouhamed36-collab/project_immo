@@ -54,7 +54,7 @@
       $_SESSION['utilisateur'] = $utilisateur;
       header("location:http://localhost/project_immo/");
     } else {
-      $messageConn = "Email ou mot de passe incorrect";
+      $messageConn = "Identifiants incorrect ou compte inactif.";
       echo "<script>document.querySelector('p').textContent = '$messageConn';</script>";
     }
   }
