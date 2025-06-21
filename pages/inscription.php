@@ -40,7 +40,7 @@
                     </div>
 
                     <!-- Registration Form -->
-                    <form id="registrationForm" novalidate>
+                    <form id="registrationForm" enctype="multipart/form-data" novalidate method="POST" action="../CRUD/inscriptionModel.php">
                         <!-- Full Name Field -->
                         <div class="mb-3">
                             <label for="fullName" class="form-label fw-medium">
@@ -101,7 +101,7 @@
                         <!-- File Input -->
                         <div class="mb-3">
                             <label for="formFileSm" class="form-label">Ajouter une photo de profil</label>
-                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                            <input class="form-control form-control-sm" id="formFileSm" name="photo" type="file">
                         </div>
 
                         <!-- Password Field -->

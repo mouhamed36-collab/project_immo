@@ -1,5 +1,4 @@
 // Registration Form JavaScript
-
 document.addEventListener('DOMContentLoaded', function () {
     // Form elements
     const form = document.getElementById('registrationForm');
@@ -21,9 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const strengthBar = passwordStrength.querySelector('.progress-bar');
     const strengthLabel = passwordStrength.querySelector('.strength-label');
     const requirements = passwordStrength.querySelectorAll('.password-requirements small');
-
-    // Form validation state
-    let isSubmitting = false;
 
     // Initialize event listeners
     initializeEventListeners();
@@ -62,14 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function handleFormSubmit(e) {
-        e.preventDefault();
-
-        if (isSubmitting) return;
-
         // Validate all fields
-        const isValid = validateAllFields();
 
+        const isValid = validateAllFields();
         if (!isValid) {
+            // Prevent submission on validation errors
+            e.preventDefault();
             showMessage('Veuillez corriger les erreurs ci-dessus', 'danger');
             form.classList.add('shake');
             setTimeout(() => form.classList.remove('shake'), 500);
@@ -79,38 +73,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Check password strength
         const strength = calculatePasswordStrength(passwordInput.value);
         if (strength.score < 3) {
+            // Prevent submission if password too weak
+            e.preventDefault();
             showMessage('Veuillez choisir un mot de passe plus fort', 'danger');
             passwordInput.focus();
             return;
         }
-
-        // Submit form
-        submitForm();
-    }
-
-    async function submitForm() {
-        setSubmittingState(true);
-
-        try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 2000));
-
-            // Success
-            showMessage('Inscription réussie ! Bienvenue !', 'success');
-
-            // Reset form after delay
-            setTimeout(() => {
-                form.reset();
-                clearAllValidation();
-                clearSubmitMessage();
-                passwordStrength.style.display = 'none';
-            }, 3000);
-
-        } catch (error) {
-            showMessage('Échec de l\'inscription. Veuillez réessayer.', 'danger');
-        } finally {
-            setSubmittingState(false);
-        }
+        // If we reach here, the form is valid — allow the browser to submit it normally
     }
 
     function validateAllFields() {
