@@ -3,7 +3,7 @@ require_once("con_db.php");
 function verifConn($email, $mot_de_passe)
 {
     global $con;
-    $sql = "SELECT * FROM utilisateur WHERE email=? AND mot_de_passe=?";
+    $sql = "SELECT * FROM utilisateur WHERE email=? AND mot_de_passe=? AND actif=1";
     $stmt = $con->prepare($sql);
     if ($stmt) {
         $mot_de_passe_hashe = md5($mot_de_passe); // Utilisation de md5 pour le mot de passe pour l'instant
