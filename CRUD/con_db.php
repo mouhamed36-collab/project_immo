@@ -8,5 +8,5 @@ $con = mysqli_connect($server, $user, $pwd, $db);
 if (!$con) {
 	die("Connection failed: " . mysqli_connect_error());
 } else {
-	echo "Connected successfully";
+	echo "<script>console.log('Connexion réussie');</script>";
 }
