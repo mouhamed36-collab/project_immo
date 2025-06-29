@@ -27,7 +27,7 @@
           <li class="nav-item"><a class="nav-link" href="#">Avis</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        <a href="#" class="btn btn-outline-dark me-2">Se connecter</a>
+        <a href="./pages/page de connexion.php" class="btn btn-outline-dark me-2">Se connecter</a>
         <a href="./pages/inscription.php" class="btn btn-dark">S'inscrire</a>
       </div>
     </div>
@@ -42,7 +42,7 @@
           <p class="hero-text">
             Découvrez notre sélection organisée de <br>propriétés exquises méticuleusement <br>adaptées à votre vision unique de <br>l'hébergement de vos rêves.
           </p>
-          <a href="#" class="btn-primary-custom">Se connecter</a>
+          <a href="./pages/page de connexion.php" class="btn-primary-custom">Se connecter</a>
         </div>
         <div class="col-md-6">
           <img src="/project_immo/asset/img/maison de luxe.png" class="img-fluid" alt="Villa moderne" style="width: 110%;" />
