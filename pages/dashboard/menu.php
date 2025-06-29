@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,10 +8,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../css/dashboard/menu.css">
   <link rel="stylesheet" href="../../css/dashboard/gestions_bien.css">
-   <link rel="stylesheet" href="../../css/dashboard/dashboard-notification.css" />
+  <link rel="stylesheet" href="../../css/dashboard/dashboard-notification.css" />
 
-  
+
 </head>
+
 <body>
   <div class="dashboard-container">
     <!-- MENU LATÉRAL GAUCHE -->
@@ -20,7 +22,7 @@
 
       <!-- Profil utilisateur -->
       <div class="menu-profil">
-        <img src="profil.jpg" alt="Photo utilisateur" class="profil-photo">
+        <img src="http://localhost/project_immo/asset/img/profil.jpg" alt="Photo utilisateur" class="profil-photo">
         <div class="profil-info">
           <div class="profil-nom">Nom utilisateur</div>
           <div class="profil-email">email@exemple.com</div>
@@ -28,6 +30,7 @@
       </div>
 
       <!-- Rôle -->
+      <br>
       <div class="profil-role">Administrateur</div>
       <!-- Menu principal -->
       <nav class="menu-links">
