@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Gestion des Biens</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/dashboard/menu.css">
+  <link rel="stylesheet" href="../../css/dashboard/gestions_bien.css">
+  <link rel="stylesheet" href="../../css/dashboard/dashboard-notification.css" />
+
+
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <!-- MENU LATÉRAL GAUCHE -->
+    <aside class="menu-gauche">
+      <!-- Logo IMMO -->
+      <div class="menu-logo">IMMO</div>
+
+      <!-- Profil utilisateur -->
+      <div class="menu-profil">
+        <img src="http://localhost/project_immo/asset/img/profil.jpg" alt="Photo utilisateur" class="profil-photo">
+        <div class="profil-info">
+          <div class="profil-nom">Nom utilisateur</div>
+          <div class="profil-email">email@exemple.com</div>
+        </div>
+      </div>
+
+      <!-- Rôle -->
+      <br>
+      <div class="profil-role">Administrateur</div>
+      <!-- Menu principal -->
+      <nav class="menu-links">
+        <div class="menu-item"><a href="">Gestion Utilisateur</a></div>
+        <div class="menu-item"><a href="">Gestion des Biens</a></div>
+        <div class="menu-item"><a href="">Gestion des Visites</a></div>
+        <div class="menu-item"><a href="">Gestion Notification</a></div>
+      </nav>
+
+      <!-- Déconnexion -->
+      <div class="btn-deconnexion">Déconnexion</div>
+    </aside>
