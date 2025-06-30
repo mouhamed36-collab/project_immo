@@ -31,21 +31,21 @@
               <td>Hector@gmail.com</td>
               <td>764532156</td>
               <td><span class="badge badge-visite">Actif</span></td>
-              <td><img src="photo1.jpg" class="img-bien" alt="bien"></td>
+              <td><img src="../../asset/img/profil.jpg" class="img-bien" alt="bien"></td>
             </tr>
             <tr>
               <td>Fernanda</td>
               <td>hernandez@gmail.com</td>
               <td>772341278</td>
-              <td><span class="badge badge-dispo">Actif</span></td>
-              <td><img src="photo2.jpg" class="img-bien" alt="bien"></td>
+              <td><span class="badge badge-visite">Actif</span></td>
+              <td><img src="../../asset/img/profil.jpg" class="img-bien" alt="bien"></td>
             </tr>
             <tr>
               <td>Mauricio</td>
               <td>Perez@gmail.com</td>
               <td>713245679</td>
               <td><span class="badge badge-indispo">Inactif</span></td>
-              <td><img src="photo3.jpg" class="img-bien" alt="bien"></td>
+              <td><img src="../../asset/img/profil.jpg" class="img-bien" alt="bien"></td>
             </tr>
           </tbody>
         </table>

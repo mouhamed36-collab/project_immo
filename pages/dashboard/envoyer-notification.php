@@ -1,20 +1,26 @@
 <?php require_once("menu.php"); ?>
+
+
 <!-- CONTENU PRINCIPAL -->
 <main class="contenu-dashboard">
   <!-- Titre -->
-  <h1 class="titre-dashboard">Gestion  Notification</h1>
+  <h1 class="titre-dashboard">Gestion Notification</h1>
 
   <!-- Ligne séparatrice -->
   <hr class="separateur" />
 
   <!-- Barre de recherche + Bouton -->
-  <div class="zone-recherche">
-    <input type="text" class="barre-recherche" placeholder="Rechercher  par status..." />
-    <button class="btn-envoyer-notification">Envoyer notification</button>
+  <div class="zone-recherche d-flex justify-content-between align-items-center mb-4">
+    <input type="text" class="form-control w-50" placeholder="Rechercher par status..." />
+    <button class="btn-envoyer-notification" data-bs-toggle="modal" data-bs-target="#modalNotification">
+      Envoyer notification
+    </button>
   </div>
+
+  <!-- Tableau des notifications -->
   <div class="table-responsive">
     <table class="table table-bordered bg-white">
-      <thead>
+      <thead class="table-light">
         <tr>
           <th>Email</th>
           <th>Client</th>
@@ -76,6 +82,31 @@
       </tbody>
     </table>
   </div>
-  </div>
+</main>
 
-  <?php require_once("pied.php"); ?>
+<!-- ✅ MODALE DE NOTIFICATION AVEC CROIX -->
+<div class="modal fade" id="modalNotification" tabindex="-1" aria-labelledby="modalNotificationLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-4" style="background-color: #fefaf6; border-radius: 12px;">
+      
+      <!-- En-tête avec titre et croix -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mb-0" id="modalNotificationLabel">Envoyer une notification</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      
+      <!-- Formulaire -->
+      <form>
+        <input type="email" class="form-control mb-3" placeholder="Email destinataire..." required>
+        <input type="text" class="form-control mb-3" placeholder="Objet..." required>
+        <textarea class="form-control mb-3" placeholder="Message..." rows="4" required></textarea>
+        <button type="submit" class="btn btn-dark w-100">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<?php require_once("pied.php"); ?>
+
+
