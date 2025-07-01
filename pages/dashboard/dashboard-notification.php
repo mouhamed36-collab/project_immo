@@ -1,10 +1,8 @@
 <?php require_once("menu.php"); ?>
-
-
 <!-- CONTENU PRINCIPAL -->
 <main class="contenu-dashboard">
   <!-- Titre -->
-  <h1 class="titre-dashboard">Gestion des notifications</h1>
+  <h1 class="titre-dashboard">Gestion  Notification</h1>
 
   <!-- Ligne séparatrice -->
   <hr class="separateur" />

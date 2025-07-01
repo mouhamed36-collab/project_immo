@@ -1,73 +1,112 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Formulaire Notification</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .notif-card {
-      max-width: 400px;
-      margin: 50px auto;
-      background-color: #fefaf6;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
+<?php require_once("menu.php"); ?>
 
-    .notif-card h5 {
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
 
-    .notif-input {
-      background-color: #e6cfc2;
-      border: none;
-      border-radius: 5px;
-      padding: 10px;
-      margin-bottom: 15px;
-      width: 100%;
-      color: #333;
-    }
+<!-- CONTENU PRINCIPAL -->
+<main class="contenu-dashboard">
+  <!-- Titre -->
+  <h1 class="titre-dashboard">Gestion Notification</h1>
 
-    .notif-input::placeholder {
-      color: #5c4b41;
+  <!-- Ligne séparatrice -->
+  <hr class="separateur" />
+
+  <!-- Barre de recherche + Bouton -->
+  <div class="zone-recherche d-flex justify-content-between align-items-center mb-4">
+    <input type="text" class="form-control w-50" placeholder="Rechercher par status..." />
+    <button class="btn-envoyer-notification" data-bs-toggle="modal" data-bs-target="#modalNotification">
+      Envoyer notification
+    </button>
+  </div>
+
+  <!-- Tableau des notifications -->
+  <div class="table-responsive">
+    <table class="table table-bordered bg-white">
+      <thead class="table-light">
+        <tr>
+          <th>Email</th>
+          <th>Client</th>
+          <th>Motif de notification</th>
+          <th>Status</th>
+          <th>Date de la visite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hectore@gmail.com</td>
+          <td>Hectore</td>
+          <td>présentation</td>
+          <td><span class="badge-status badge-nonlu">non lu</span></td>
+          <td>23/11/2025 11:30</td>
+        </tr>
+        <tr>
+          <td>Hermandez@gmail.com</td>
+          <td>hernandez</td>
+          <td>finalisation</td>
+          <td><span class="badge-status badge-nonlu">non lu</span></td>
+          <td>23/11/2025 11:30</td>
+        </tr>
+        <tr>
+          <td>Coronada@gmail.com</td>
+          <td>Coronado</td>
+          <td>retour</td>
+          <td><span class="badge-status badge-lu">lu</span></td>
+          <td>23/11/2025 11:30</td>
+        </tr>
+        <tr>
+          <td>Morales@gmail.com</td>
+          <td>Morales</td>
+          <td>présentation</td>
+          <td><span class="badge-status badge-nonlu">non lu</span></td>
+          <td>23/11/2025 11:30</td>
+        </tr>
+        <tr>
+          <td>Perez@gmail.com</td>
+          <td>Perez</td>
+          <td>présentation</td>
+          <td><span class="badge-status badge-lu">lu</span></td>
+          <td>23/11/2025 11:30</td>
+        </tr>
+        <tr>
+          <td>Bautista@gmail.com</td>
+          <td>Bautista</td>
+          <td>visite</td>
+          <td><span class="badge-status badge-lu">lu</span></td>
+          <td>23/11/2025 11:30</td>
+        </tr>
+        <tr>
+          <td>Mendez@gmail.com</td>
+          <td>Mendez</td>
+          <td>finalisation</td>
+          <td><span class="badge-status badge-lu">lu</span></td>
+          <td>23/11/2025 11:30</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<!-- ✅ MODALE DE NOTIFICATION AVEC CROIX -->
+<div class="modal fade" id="modalNotification" tabindex="-1" aria-labelledby="modalNotificationLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-4" style="background-color: #fefaf6; border-radius: 12px;">
       
-    }
-
-    .notif-btn {
-      background-color: #3c2f2f;
-      color: white;
-      border: none;
-      padding: 10px 20px; 
-      height: 16;
-      top: 4px;
-       left: 13px;
-box-shadow: 0px 20px 20px 0px #2B1B12;
-
-
-    }
-
-    .notif-btn:hover {
-      background-color: #2b1f1f;
-    }
-  </style>
-</head>
-<body>
-
-<div class="notif-card">
-  <h5>envoyer notification</h5>
-  <input type="email" class="notif-input" placeholder="email destinataire...">
-  <input type="text" class="notif-input" placeholder="objet...">
-  
-  <textarea class="notif-input" placeholder="message..." rows="4"></textarea>
-  <button class="notif-btn">Envoyer</button>
+      <!-- En-tête avec titre et croix -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mb-0" id="modalNotificationLabel">Envoyer une notification</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      
+      <!-- Formulaire -->
+      <form>
+        <input type="email" class="form-control mb-3" placeholder="Email destinataire..." required>
+        <input type="text" class="form-control mb-3" placeholder="Objet..." required>
+        <textarea class="form-control mb-3" placeholder="Message..." rows="4" required></textarea>
+        <button type="submit" class="btn btn-dark w-100">Envoyer</button>
+      </form>
+    </div>
+  </div>
 </div>
-
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<?php require_once("pied.php"); ?>
 
-</body>
-</html>
+

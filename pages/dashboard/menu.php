@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="../../css/dashboard/menu.css">
   <link rel="stylesheet" href="../../css/dashboard/gestions_bien.css">
   <link rel="stylesheet" href="../../css/dashboard/dashboard-notification.css" />
+  <link rel="stylesheet" href="../../css/dashboard/envoyer-notification.css">
+  <link rel="stylesheet" href="../../css/dashboard/detail-message.css">
+  <link rel="stylesheet" href="../../css/dashboard/planifier-visite.css">
 
 
 </head>
