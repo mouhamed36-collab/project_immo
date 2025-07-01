@@ -187,7 +187,7 @@
 
       <!-- 🔧 Boutons -->
       <div class="modal-footer justify-content-center border-0">
-        <button class="btn btn-success m-4"  data-bs-toggle="modal" data-bs-target="#ModifierBienModal">Modifier</button>
+        <button class="btn btn-success mx-4"  data-bs-toggle="modal" data-bs-target="#ModifierBienModal">Modifier</button>
         <button class="btn btn-danger  mx-4">Supprimer</button>                                                                             
       </div>
     </div>
