@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 21 juin 2025 à 20:05
+-- Généré le : ven. 04 juil. 2025 à 19:42
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -40,6 +40,13 @@ CREATE TABLE `bien` (
   `date_creation` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `bien`
+--
+
+INSERT INTO `bien` (`idbien`, `titre`, `description`, `photo`, `type`, `surface`, `prix`, `localisation`, `status`, `date_creation`) VALUES
+(1, 'appartement a louer', 'appartement a louer a la cite keur guorgui derriere la sonatel avec acces au balcon et la vu sur la vdn', '', 'appartement', 120, 300000, 'cite keur guorgui', 'disponible', '2025-07-02 14:45:09');
+
 -- --------------------------------------------------------
 
 --
@@ -50,10 +57,19 @@ CREATE TABLE `notifications` (
   `idnotif` int(11) NOT NULL,
   `contenu` varchar(255) NOT NULL,
   `date_envoi` datetime NOT NULL DEFAULT current_timestamp(),
-  `typenotif` varchar(20) NOT NULL,
-  `idutilisateur` int(11) NOT NULL,
-  `idbien` int(11) NOT NULL
+  `typenotif` varchar(100) NOT NULL,
+  `statut` varchar(7) NOT NULL DEFAULT 'non lu',
+  `idutilisateur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `notifications`
+--
+
+INSERT INTO `notifications` (`idnotif`, `contenu`, `date_envoi`, `typenotif`, `statut`, `idutilisateur`) VALUES
+(1, 'je voudrais avoir un rendez vous au sein de votre agence pour vous parler de mes biens', '2025-07-03 15:16:09', 'suggestionde partena', 'lu', 1),
+(2, 'test numero 1 apres implementation du formulaire d\'ajout cote admin merci', '2025-07-04 17:08:15', 'test 1', 'lu', 1),
+(3, 'nous serons ravis de vous accueillir chez nous pour en discuter plus en detail. vous pouvez planifier un rendez vous au niveau de la plateforme ou nous partager vos disponibilites.', '2025-07-04 17:31:10', 'reponse pour la sugg', 'non lu', 1);
 
 -- --------------------------------------------------------
 
@@ -97,6 +113,15 @@ CREATE TABLE `visite` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Déchargement des données de la table `visite`
+--
+
+INSERT INTO `visite` (`idvisite`, `Date_visite`, `statut`, `motif_visite`, `date_creation`, `idutilisateur`, `idbien`) VALUES
+(1, '2025-07-10 11:47:09', 'planifier', 'visite de location', '2025-07-02 14:48:53', 1, 1),
+(10, '2025-07-02 07:00:00', 'visiter', 'Visite de renseignement', '2025-07-03 15:58:04', 1, 1),
+(11, '2025-07-03 16:22:00', 'en visite', 'Visite de renseignement', '2025-07-03 16:22:13', 1, 1);
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -111,7 +136,6 @@ ALTER TABLE `bien`
 --
 ALTER TABLE `notifications`
   ADD PRIMARY KEY (`idnotif`),
-  ADD KEY `idbien` (`idbien`),
   ADD KEY `idutilisateur` (`idutilisateur`);
 
 --
@@ -136,19 +160,25 @@ ALTER TABLE `visite`
 -- AUTO_INCREMENT pour la table `bien`
 --
 ALTER TABLE `bien`
-  MODIFY `idbien` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idbien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `idnotif` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idnotif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   MODIFY `idutilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `visite`
+--
+ALTER TABLE `visite`
+  MODIFY `idvisite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Contraintes pour les tables déchargées
@@ -158,7 +188,6 @@ ALTER TABLE `utilisateur`
 -- Contraintes pour la table `notifications`
 --
 ALTER TABLE `notifications`
-  ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`idbien`) REFERENCES `bien` (`idbien`),
   ADD CONSTRAINT `notifications_ibfk_2` FOREIGN KEY (`idutilisateur`) REFERENCES `utilisateur` (`idutilisateur`);
 
 --
