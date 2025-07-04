@@ -9,7 +9,7 @@
   <!-- Barre de recherche + Bouton -->
   <div class="zone-recherche">
     <input type="text" class="barre-recherche" placeholder="Rechercher une adresse..." />
-    <button class="btn-ajouter"  data-bs-toggle="modal" data-bs-target="#ajouterBienModal">Ajouter bien</button>
+    <button class="btn-ajouter" data-bs-toggle="modal" data-bs-target="#ajouterBienModal">Ajouter bien</button>
   </div>
 
   <!-- Tableau -->
@@ -51,8 +51,8 @@
   </div>
 </main>
 <!-- Modal pour ajouter bien -->
-<div class="modal fade" id="ajouterBienModal" tabindex="-1" aria-labelledby="ajouterBienLabel" aria-hidden="true" >
-  <div class="modal-dialog modal-dialog-centered" >
+<div class="modal fade" id="ajouterBienModal" tabindex="-1" aria-labelledby="ajouterBienLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="
       width: 512px;
       height: 575px;
@@ -62,7 +62,7 @@
       border: none;
       border-radius: 8px;
     ">
-      <div class="modal-header" >
+      <div class="modal-header">
         <h5 class="modal-title w-100 text-center" id="ajouterBienLabel" style="
           font-family: Montserrat;
           font-weight: bold;
@@ -128,8 +128,8 @@
     </div>
   </div>
 </div>
- <!-- fin pour modal ajouter bien -->
-  <!-- Modal Detail bien -->
+<!-- fin pour modal ajouter bien -->
+<!-- Modal Detail bien -->
 <div class="modal fade" id="modalDetailBien" tabindex="-1" aria-labelledby="modalDetailBienLabel" aria-hidden="true">
   <div class="modal-dialog  modal-lg modal-dialog-centered">
     <div class="modal-content" style="
@@ -167,46 +167,46 @@
           </p>
 
           <p style="font-family: Montserrat; font-weight: 600; font-size: 14px; color: #4F3527; margin-bottom: 4px;">
-             Chambres : 3
+            Chambres : 3
           </p>
 
           <p style="font-family: Montserrat; font-weight: 600; font-size: 14px; color: #4F3527; margin-bottom: 4px;">
-             Surface : 120 m²
+            Surface : 120 m²
           </p>
 
           <p style="font-family: Moul; font-size: 24px; color: #4F3527; font-weight: 400;">
-             Prix : 18 000 000 FCFA
+            Prix : 18 000 000 FCFA
           </p>
         </div>
       </div>
-       <hr style="border:none;height:3px;background-color:#DDC7BB;width:100%;">
-          <div>
-            <h4 style="color: #4F3527;text-align:left;margin-left:30px">Description</h4>
-            <p style="color: #4F3527;text-align:left;margin-left:30px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam delectus fugiat impedit ducimus libero perferendis a minima consequuntur, odit ab, corrupti laborum sint! Quisquam, iusto repellendus veniam doloremque praesentium repellat!</p>
-          </div>
+      <hr style="border:none;height:3px;background-color:#DDC7BB;width:100%;">
+      <div>
+        <h4 style="color: #4F3527;text-align:left;margin-left:30px">Description</h4>
+        <p style="color: #4F3527;text-align:left;margin-left:30px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam delectus fugiat impedit ducimus libero perferendis a minima consequuntur, odit ab, corrupti laborum sint! Quisquam, iusto repellendus veniam doloremque praesentium repellat!</p>
+      </div>
 
       <!-- 🔧 Boutons -->
       <div class="modal-footer justify-content-center border-0">
-        <button class="btn btn-success mx-4"  data-bs-toggle="modal" data-bs-target="#ModifierBienModal">Modifier</button>
-        <button class="btn btn-danger  mx-4">Supprimer</button>                                                                             
+        <button class="btn btn-success mx-4" data-bs-toggle="modal" data-bs-target="#ModifierBienModal">Modifier</button>
+        <button class="btn btn-danger  mx-4">Supprimer</button>
       </div>
     </div>
   </div>
 </div>
 <!-- fin modal detail bien -->
- <!-- debut modal modifier -->
-<div class="modal fade" id="ModifierBienModal" tabindex="-1" aria-labelledby="ajouterBienLabel" aria-hidden="true" >
-  <div class="modal-dialog modal-dialog-centered" >
+<!-- debut modal modifier -->
+<div class="modal fade" id="ModifierBienModal" tabindex="-1" aria-labelledby="ajouterBienLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="
       width: 512px;
-      height: 575px;
+      height: 650px;
       margin: auto;
       background-color: #FBF5F1;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       border: none;
       border-radius: 8px;
     ">
-      <div class="modal-header" >
+      <div class="modal-header">
         <h5 class="modal-title w-100 text-center" id="AjouterBienLabel" style="
           font-family: Montserrat;
           font-weight: bold;
@@ -252,6 +252,15 @@
             <input type="text" class="form-control" placeholder="Adresse.." style="background-color: #DDC7BB;">
           </div>
 
+          <div class="mb-3">
+            <select class="form-select" style="background-color: #DDC7BB;">
+              <option selected disabled>status</option>
+              <option value="en visite">En visite</option>
+              <option value="disponible">disponible</option>
+              <option value="indisponible">indisponible</option>
+            </select>
+          </div>
+
           <div class="text-center">
             <button type="submit" class="btn" style="
               width: 156px;
@@ -272,5 +281,5 @@
     </div>
   </div>
 </div>
- <!-- fin pour modal  bien -->
+<!-- fin pour modal  bien -->
 <?php require_once("pied.php"); ?>
