@@ -193,7 +193,7 @@ $biens = getAllBiens();
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" style="
       width: 512px;
-      height: 575px;
+      height: 650px;
       margin: auto;
       background-color: #FBF5F1;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);

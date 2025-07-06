@@ -187,6 +187,12 @@ ALTER TABLE `visite`
   MODIFY `idvisite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT pour la table `visite`
+--
+ALTER TABLE `visite`
+  MODIFY `idvisite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- Contraintes pour les tables déchargées
 --
 

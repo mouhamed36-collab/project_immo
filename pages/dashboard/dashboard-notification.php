@@ -46,6 +46,7 @@ require_once("menu.php"); ?>
     <button class="btn-envoyer-notification">Envoyer notification</button>
   </div>
 
+
   <div class="table-responsive">
     <table class="table table-bordered bg-white tableau-notif">
       <thead>
