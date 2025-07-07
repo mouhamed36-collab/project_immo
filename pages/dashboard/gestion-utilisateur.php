@@ -1,4 +1,5 @@
-<?php require_once("menu.php"); ?>
+<?php
+require_once("menu.php"); ?>
 <style>
   body {
     background-color: #f8f9fa;

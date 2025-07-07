@@ -1,3 +1,8 @@
+<?php
+include_once("./CRUD/biendModel.php");
+$biens = getAllBiens();
+$biensAccueil = array_slice($biens, 0, 3);
+?>
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -40,63 +45,24 @@
   <div class="layout-row mt-5 mb-5">
     <div class="container d-flex justify-content-between">
       <!-- Card 1 -->
-
+      <?php foreach ($biensAccueil as $bien) : ?>
       <div class="card-hebergement">
-        <a href="./pages/detail_bien.php" style="text-decoration: none; color: inherit;">
-          <img src="./asset/img/Mask group.png" alt="Hébergement 1">
+        <a href="./pages/detail_bien.php?id=<?= $bien['idbien'] ?>" style="text-decoration: none; color: inherit;">
+          <img src="http://localhost/project_immo/CRUD/<?= $bien['photo'] ?>" alt="<?= $bien['titre'] ?>">
           <div class="card-body-custom">
-            <h5><i class="bi bi-geo-alt-fill"></i> Dakar, Plateau</h5>
+            <h5><i class="bi bi-geo-alt-fill"></i> <?= htmlspecialchars($bien['localisation']) ?></h5>
             <div class="info">
-              <span><i class="bi bi-door-closed-fill"></i> 3 Rooms</span>
-              <span><i class="bi bi-aspect-ratio-fill"></i> 120 m²</span>
+              <span><i class="bi bi-door-closed-fill"></i> <?= htmlspecialchars($bien['type']) ?></span>
+              <span><i class="bi bi-aspect-ratio-fill"></i> <?= htmlspecialchars($bien['surface']) ?> m²</span>
             </div>
             <div class="footer-card">
               <button class="btn-visiter">Visiter</button>
-              <div class="prix">350 000 FCFA</div>
+              <div class="prix"><?= number_format($bien['prix'], 0, ',', ' ') ?> FCFA</div>
             </div>
           </div>
         </a>
       </div>
-
-
-      <!-- Card 2 -->
-
-      <div class="card-hebergement">
-        <a href="./pages/detail_bien.php" style="text-decoration: none; color: inherit;">
-          <img src="./asset/img/Mask group.png" alt="Hébergement 2">
-          <div class="card-body-custom">
-            <h5><i class="bi bi-geo-alt-fill"></i> Saly, Mbour</h5>
-            <div class="info">
-              <span><i class="bi bi-door-closed-fill"></i> 2 Rooms</span>
-              <span><i class="bi bi-aspect-ratio-fill"></i> 85 m²</span>
-            </div>
-            <div class="footer-card">
-              <button class="btn-visiter">Visiter</button>
-              <div class="prix">250 000 FCFA</div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-
-      <!-- Card 3 -->
-
-      <div class="card-hebergement">
-        <a href="./pages/detail_bien.php" style="text-decoration: none; color: inherit;">
-          <img src="./asset/img/Mask group.png" alt="Hébergement 3">
-          <div class="card-body-custom">
-            <h5><i class="bi bi-geo-alt-fill"></i> Ngor, Almadies</h5>
-            <div class="info">
-              <span><i class="bi bi-door-closed-fill"></i> 4 Rooms</span>
-              <span><i class="bi bi-aspect-ratio-fill"></i> 150 m²</span>
-            </div>
-            <div class="footer-card">
-              <button class="btn-visiter">Visiter</button>
-              <div class="prix">500 000 FCFA</div>
-            </div>
-          </div>
-        </a>
-      </div>
+      <?php endforeach; ?>
 
     </div>
   </div>

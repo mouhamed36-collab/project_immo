@@ -27,8 +27,15 @@
           <li class="nav-item"><a class="nav-link" href="#">Avis</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        <a href="./pages/page de connexion.php" class="btn btn-outline-dark me-2">Se connecter</a>
-        <a href="./pages/inscription.php" class="btn btn-dark">S'inscrire</a>
+        <?php
+        session_start();
+        if (empty($_SESSION['idutilisateur'])) {
+          echo '<a href="./pages/page de connexion.php" class="btn btn-outline-dark me-2">Se connecter</a>';
+          echo '<a href="./pages/inscription.php" class="btn btn-dark">S\'inscrire</a>';
+        } else {
+          echo '<a href="http://localhost/project_immo/CRUD/deconnexion.php" style="text-decoration: none; color: white"><button class="btn btn-dark">Se déconnecter</button></a>';
+        }
+        ?>
       </div>
     </div>
   </nav>
@@ -42,7 +49,13 @@
           <p class="hero-text">
             Découvrez notre sélection organisée de <br>propriétés exquises méticuleusement <br>adaptées à votre vision unique de <br>l'hébergement de vos rêves.
           </p>
-          <a href="./pages/page de connexion.php" class="btn-primary-custom">Se connecter</a>
+          <?php
+          if (empty($_SESSION['idutilisateur'])) {
+            echo '<a href="./pages/page de connexion.php" class="btn-primary-custom">Se connecter</a>';
+          } else {
+            echo '<a href="http://localhost/project_immo/CRUD/deconnexion.php" style="text-decoration: none; color: white"><button class="btn btn-dark">Se déconnecter</button></a>';
+          }
+          ?>
         </div>
         <div class="col-md-6">
           <img src="/project_immo/asset/img/maison de luxe.png" class="img-fluid" alt="Villa moderne" style="width: 110%;" />

@@ -15,8 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['action'])) {
       $idUser      = getIdUtilisateur($email);
       $date_visite = "$date $heure";
 
+      $bien = getnomBien($idBien) . ',' . getlocationBien($idBien);
+
       if ($idUser && $idBien && ajoutVisite($date_visite, 'planifier', 'Visite de renseignement', $idUser, $idBien)) {
-        envoyerEmailVisite($email, getnomUser($email), $date_visite, getnomBien($idBien));
+        envoyerEmailVisite($email, getnomUser($email), $date_visite, $bien);
+
         header('Location: gestion_visites.php');
         exit;
       } else {
@@ -77,7 +80,9 @@ require_once("menu.php");
         $visites = getVisites();
         if ($visites) {
           foreach ($visites as $v) {
-            $bien   = getnomBien($v['idbien']);
+
+            $bien   = getnomBien($v['idbien']) . ', ' . getlocationBien($v['idbien']);
+
             $client = getnomUtilisateur($v['idutilisateur']);
             $idVis  = intval($v['idvisite']);
 

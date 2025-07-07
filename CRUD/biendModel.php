@@ -1,4 +1,4 @@
-<?php
+<?php<?php
 require_once("con_db.php");
 
 // 1. Configuration du dossier d'upload
@@ -36,7 +36,7 @@ function ajouterBien($data)
     $type   = trim($data['type'] ?? '');
     $localisation = trim($data['localisation'] ?? '');
     $surface     = floatval($data['surface'] ?? 0);
-    $status = 'disponible'; // Valeur par défaut
+    $status = trim($data['status']); // Valeur par défaut
 
     // 4. Préparation et exécution de la requête
     $sql = "INSERT INTO bien (titre, description, prix, type, photo, localisation, surface, status)
@@ -133,11 +133,11 @@ function updateBien($data)
     $type   = trim($data['type'] ?? '');
     $localisation = trim($data['localisation'] ?? '');
     $surface     = floatval($data['surface'] ?? 0);
-
+    $status = trim($data['status'] ?? ''); 
     // 3. Préparation et exécution de la requête
     if ($urlPhoto) {
         // Mise à jour avec nouvelle photo
-        $sql = "UPDATE bien SET titre=?, description=?, prix=?, type=?, photo=?, localisation=?, surface=? WHERE idbien=?";
+        $sql = "UPDATE bien SET titre=?, description=?, prix=?, type=?, photo=?, localisation=?, surface=?, status=? WHERE idbien=?";
         $stmt = $con->prepare($sql);
         if (!$stmt) {
             return [
@@ -145,10 +145,10 @@ function updateBien($data)
                 'message' => "Erreur de préparation SQL : " . $con->error
             ];
         }
-        $stmt->bind_param("ssdssssi", $titre, $description, $prix, $type, $urlPhoto, $localisation, $surface, $id);
+        $stmt->bind_param("ssdsssssi", $titre, $description, $prix, $type, $urlPhoto, $localisation, $surface, $status, $id);
     } else {
         // Mise à jour sans nouvelle photo
-        $sql = "UPDATE bien SET titre=?, description=?, prix=?, type=?, localisation=?, surface=? WHERE idbien=?";
+        $sql = "UPDATE bien SET titre=?, description=?, prix=?, type=?, localisation=?, surface=?, status=? WHERE idbien=?";
         $stmt = $con->prepare($sql);
         if (!$stmt) {
             return [
@@ -156,7 +156,7 @@ function updateBien($data)
                 'message' => "Erreur de préparation SQL : " . $con->error
             ];
         }
-        $stmt->bind_param("ssdsssi", $titre, $description, $prix, $type, $localisation, $surface, $id);
+        $stmt->bind_param("ssdssssi", $titre, $description, $prix, $type, $localisation, $surface,$status, $id);
     }
     if ($stmt->execute()) {
         return [
@@ -209,4 +209,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimerBien'])) {
     $result = deleteBienById($id);
     header("Location: http://localhost/project_immo/pages/dashboard/gestion_biens.php");
     exit;
-}
+} 

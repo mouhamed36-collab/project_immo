@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Vérifie que la session contient un utilisateur et que son rôle est admin
+if (!isset($_SESSION['utilisateur']) || $_SESSION['utilisateur']['role'] !== 'admin') {
+  header('Location: ../../pages/page de connexion.php');
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -45,5 +54,7 @@
       </nav>
 
       <!-- Déconnexion -->
-      <div class="btn-deconnexion">Déconnexion</div>
+      <a href="../../CRUD/deconnexion.php" style="text-decoration: none; color: white">
+        <div class="btn-deconnexion">Déconnexion</div>
+      </a>
     </aside>

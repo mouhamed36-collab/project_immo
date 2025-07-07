@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (empty($_SESSION['idutilisateur'])) {
+  header('Location: ./page de connexion.php');
+  exit;
+}
+include_once("../CRUD/biendModel.php");
+$biens = getAllBiens();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,9 +17,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="/project_immo/css/biens.css" />
-  </head>
+</head>
 
-      <body>
+<body>
 
   <!-- Barre de navigation -->
   <nav class="navbar navbar-expand-lg">
@@ -27,11 +36,11 @@
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
-      <button id="btn-deconnecter">Se déconnecter</button>
+      <a href="../CRUD/deconnexion.php" style="text-decoration: none; color: white"><button id="btn-deconnecter">Se déconnecter</button></a>
 
     </div>
   </nav>
-  
+
   <!-- SEARCH -->
   <div class="search-box">
     <div class="input-group">
@@ -48,109 +57,34 @@
   </div>
   <div class="container py-5">
     <div class="row g-4 justify-content-center">
-    
-    
+      <?php
+      // Affichage des biens immobiliers
+      foreach ($biens as $bien) : ?>
+        <div class="col-md-4">
+          <div class="property-card">
+            <img src="http://localhost/project_immo/CRUD/<?= $bien['photo'] ?>" class="property-img" alt="<?= $bien['titre'] ?>">
+            <div class="property-info">
+              <h6><i class="bi bi-geo-alt"></i> <?= htmlspecialchars($bien['localisation']) ?></h6>
+              <div class="icon-text"><i class="bi bi-house-door"></i> <?= htmlspecialchars($bien['type']) ?></div>
+              <div class="icon-text"><i class="bi bi-aspect-ratio"></i> <?= htmlspecialchars($bien['surface']) ?> m²</div>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <a href="detail_bien.php?id=<?= $bien['idbien'] ?>" class="btn-visit">Visiter</a>
+                <span class="price"><?= number_format($bien['prix'], 0, ',', ' ') ?> FCFA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
 
-    <!-- Carte 1 -->
-    <div class="col-md-4">
-      <div class="property-card">
-        <img src="../asset/img/MAISON 1.png" class="property-img" alt="Maison 1">
-        <div class="property-info">
-          <h6><i class="bi bi-geo-alt"></i> Dakar, parcelles assainies</h6>
-          <div class="icon-text"><i class="bi bi-house-door"></i> 4 chambres</div>
-          <div class="icon-text"><i class="bi bi-aspect-ratio"></i> 3,500 pieds carrés</div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <a href="#" class="btn-visit">Visiter</a>
-            <span class="price">42,500,000 FCFA</span>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Carte 2 -->
-    <div class="col-md-4">
-      <div class="property-card">
-        <img src="../asset/img/MAISON 2.png" class="property-img" alt="Maison 2">
-        <div class="property-info">
-          <h6><i class="bi bi-geo-alt"></i> Saint Louis, ville neuve</h6>
-          <div class="icon-text"><i class="bi bi-house-door"></i> 3 Rooms</div>
-          <div class="icon-text"><i class="bi bi-aspect-ratio"></i> 1,500 pieds carrés</div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <a href="#" class="btn-visit">Visiter</a>
-            <span class="price">18,500,000 FCFA</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Carte 3 -->
-    <div class="col-md-4">
-      <div class="property-card">
-        <img src="../asset/img/MAISON 3.png"class="property-img" alt="Maison 3">
-        <div class="property-info">
-          <h6><i class="bi bi-geo-alt"></i> Thiès, grand standing</h6>
-          <div class="icon-text"><i class="bi bi-house-door"></i> 6 Rooms</div>
-          <div class="icon-text"><i class="bi bi-aspect-ratio"></i> 4,000 pieds carrés</div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <a href="#" class="btn-visit">Visiter</a>
-            <span class="price">59,700,000 FCFA</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  <!-- Carte 1 -->
-    <div class="col-md-4">
-      <div class="property-card">
-        <img src="../asset/img/MAISON 1.png" class="property-img" alt="Maison 1">
-        <div class="property-info">
-          <h6><i class="bi bi-geo-alt"></i> Dakar, parcelles assainies</h6>
-          <div class="icon-text"><i class="bi bi-house-door"></i> 4 chambres</div>
-          <div class="icon-text"><i class="bi bi-aspect-ratio"></i> 3,500 pieds carrés</div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <a href="#" class="btn-visit">Visiter</a>
-            <span class="price">42,500,000 FCFA</span>
-          </div>
-        </div>
-      </div>
-    </div>
-      <!-- Carte 2 -->
-    <div class="col-md-4">
-      <div class="property-card">
-        <img src="../asset/img/MAISON 2.png" class="property-img" alt="Maison 2">
-        <div class="property-info">
-          <h6><i class="bi bi-geo-alt"></i> Saint Louis, ville neuve</h6>
-          <div class="icon-text"><i class="bi bi-house-door"></i> 3 Rooms</div>
-          <div class="icon-text"><i class="bi bi-aspect-ratio"></i> 1,500 pieds carrés</div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <a href="#" class="btn-visit">Visiter</a>
-            <span class="price">18,500,000 FCFA</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Carte 3 -->
-    <div class="col-md-4">
-      <div class="property-card">
-        <img src="../asset/img/MAISON 3.png" class="property-img" alt="Maison 3">
-        <div class="property-info">
-          <h6><i class="bi bi-geo-alt"></i> Thiès, grand standing</h6>
-          <div class="icon-text"><i class="bi bi-house-door"></i> 6 Rooms</div>
-          <div class="icon-text"><i class="bi bi-aspect-ratio"></i> 4,000 pieds carrés</div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <a href="#" class="btn-visit">Visiter</a>
-            <span class="price">59,700,000 FCFA</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
-</div>
 
-      <?php
-      include_once '../pages/footer.php';
-      ?>
+  <?php
+  include_once '../pages/footer.php';
+  ?>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-      </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
 </html>

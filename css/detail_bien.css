@@ -3,23 +3,23 @@
         background-color: #f5f5f5;
         padding: 40px;
     }
-
+    
     .detail-container {
         display: flex;
         gap: 40px;
     }
-
+    
     .hebergement-img {
         width: 543px;
         height: 465px;
         object-fit: cover;
         border-radius: 12px;
     }
-
+    
     .hebergement-info {
         max-width: 600px;
     }
-
+    
     .hebergement-titre {
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
@@ -27,7 +27,7 @@
         color: #4F3527;
         margin-bottom: 10px;
     }
-
+    
     .btn-disponible {
         width: 176px;
         height: 47px;
@@ -41,7 +41,21 @@
         border: none;
         margin-bottom: 20px;
     }
-
+    
+    .indisponible {
+        width: 176px;
+        height: 47px;
+        border-radius: 20px;
+        background-color: #e91212;
+        font-family: 'Montserrat', sans-serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 24px;
+        color: #4F3527;
+        border: none;
+        margin-bottom: 20px;
+    }
+    
     .localisation {
         display: flex;
         align-items: center;
@@ -52,18 +66,18 @@
         border-radius: 10px;
         margin-bottom: 20px;
     }
-
+    
     .localisation i {
         margin-right: 10px;
     }
-
+    
     .infos {
         display: flex;
         gap: 30px;
         margin-bottom: 20px;
         margin-left: 65px;
     }
-
+    
     .info-item {
         display: flex;
         align-items: center;
@@ -71,11 +85,11 @@
         color: #2B1B12;
         font-weight: 600;
     }
-
+    
     .info-item i {
         margin-right: 8px;
     }
-
+    
     .prix {
         color: #4F3527;
         width: 434px;
@@ -89,7 +103,7 @@
         margin-bottom: 20px;
         border-radius: 10px;
     }
-
+    
     .btn-visiter {
         width: 298px;
         height: 52px;
@@ -101,13 +115,13 @@
         border: none;
         margin-left: 150px;
     }
-
     /* formulaire */
+    
     .form-visite {
         max-width: 600px;
         width: 100%;
     }
-
+    
     .custom-input-date {
         width: 312px;
         height: 56px;
@@ -115,9 +129,8 @@
         border: 1px solid #1D1B20;
         border-radius: 4px;
         padding: 10px;
-
     }
-
+    
     .custom-input-heure {
         width: 93px;
         height: 48px;
@@ -126,9 +139,8 @@
         border-radius: 6px;
         padding: 6px 11px;
         margin-right: 170px;
-
     }
-
+    
     .custom-textarea {
         width: 505px;
         height: 160px;
@@ -138,7 +150,7 @@
         padding: 10px;
         resize: none;
     }
-
+    
     .btn-envoyer {
         width: 156px;
         height: 58px;
@@ -148,14 +160,14 @@
         font-size: 16px;
         font-weight: 600;
     }
-
     /* css du navbar */
-    :root {
+    
+     :root {
         --primary-bg: #fff6f0;
         --primary-color: #382c24;
         --secondary-color: #b3886b;
     }
-
+    
     body {
         font-family: 'Poppins', sans-serif;
         background-color: var(--primary-bg);
@@ -163,43 +175,43 @@
         margin: 0;
         padding: 0;
     }
-
+    
     .navbar {
         background-color: white;
         padding: 1rem 0;
     }
-
+    
     .navbar-brand {
         font-weight: 700;
         font-size: 1.5rem;
     }
-
+    
     .nav-link {
         margin-right: 1rem;
         font-weight: 500;
         color: #0c0c0c;
     }
-
+    
     .nav-link:hover {
         color: var(--secondary-color);
     }
-
+    
     .nav-link.active {
         color: var(--secondary-color);
     }
-
     /* HERO */
+    
     .hero {
         padding: 4rem 0;
         background-color: var(--primary-bg);
     }
-
+    
     .hero-title {
         font-size: 2.8rem;
         font-weight: 700;
         margin-bottom: 1rem;
     }
-
+    
     .hero-text {
         font-size: 1.1rem;
         color: #555;

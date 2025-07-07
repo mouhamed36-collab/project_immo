@@ -60,6 +60,20 @@ function getnomBien($id)
     }
 }
 
+function getlocationBien($id)
+{
+    $req = "SELECT localisation FROM bien WHERE idbien = '$id'";
+    global $con;
+    $result = $con->query($req);
+    if ($result) {
+        $row = $result->fetch_assoc();
+        return $row['localisation']; // Retourne le titre du bien
+    } else {
+        echo "Erreur lors de la récupération du titre du bien : " . $con->error;
+        return false; // Échec de la récupération du titre
+    }
+}
+
 // fonction pour récupérer les visites
 function getVisites()
 {

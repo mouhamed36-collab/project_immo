@@ -1,20 +1,5 @@
 <?php
-//  Envoie un e-mail de confirmation de planification de visite.
-require_once __DIR__ . '/../PHPMailer/src/Exception.php';
-require_once __DIR__ . '/../PHPMailer/src/PHPMailer.php';
-require_once __DIR__ . '/../PHPMailer/src/SMTP.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-/**
- * Envoie un e-mail de confirmation de visite
- *
- * @param string $destinataire Email du client
- * @param string $nomClient Nom du client (facultatif)
- * @param string $dateVisite Date et heure de la visite (facultatif)
- * @return bool Retourne true si l'e-mail est envoyé, false sinon
- */
 require_once("con_db.php");
 
 // fonction pour ajouter une notification
