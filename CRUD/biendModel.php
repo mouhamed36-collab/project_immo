@@ -1,4 +1,4 @@
-<?php
+<?php<?php
 require_once("con_db.php");
 
 // 1. Configuration du dossier d'upload
@@ -209,4 +209,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimerBien'])) {
     $result = deleteBienById($id);
     header("Location: http://localhost/project_immo/pages/dashboard/gestion_biens.php");
     exit;
-}
+} 

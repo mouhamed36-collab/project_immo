@@ -14,6 +14,7 @@ $biens = getAllBiens();
   <!-- Barre de recherche + Bouton -->
   <div class="zone-recherche">
     <input type="text" class="barre-recherche" placeholder="Rechercher une adresse..." id="searchInput" />
+
     <button class="btn-ajouter" data-bs-toggle="modal" data-bs-target="#ajouterBienModal">Ajouter bien</button>
   </div>
 
@@ -30,6 +31,9 @@ $biens = getAllBiens();
         </tr>
       </thead>
       <tbody>
+        
+        <!-- Boucle pour afficher les biens -->
+
         <?php foreach ($biens as $bien): ?>
           <tr class="table-row" data-bs-toggle="modal" data-bs-target="#modalDetailBien<?= $bien['idbien'] ?>">
             <td><?php echo htmlspecialchars($bien['titre']); ?></td>
@@ -44,6 +48,7 @@ $biens = getAllBiens();
   </div>
 </main>
 <!-- Modal pour ajouter bien -->
+
 <div class="modal fade" id="ajouterBienModal" tabindex="-1" aria-labelledby="ajouterBienLabel">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="
@@ -130,10 +135,12 @@ $biens = getAllBiens();
 </div>
 <!-- fin pour modal ajouter bien -->
 <!-- Modal Detail bien -->
+
 <?php foreach ($biens as $bien): ?>
   <div class="modal fade" id="modalDetailBien<?= $bien['idbien'] ?>" tabindex="-1" aria-labelledby="modalDetailBienLabel<?= $bien['idbien'] ?>" aria-hidden="true">
     <div class="modal-dialog  modal-lg modal-dialog-centered">
       <div class="modal-content" style="
+
       width:900px;
       height:500px;
       background-color: #FBF5F1;
@@ -163,6 +170,7 @@ $biens = getAllBiens();
             <p style="font-family: Montserrat; font-weight: 600; font-size: 14px; color: #4F3527; margin-bottom: 4px;">
               <i class="bi bi-geo-alt-fill"></i>Lieu : <?= htmlspecialchars($bien['localisation']) ?>
             </p>
+
 
             <p style="font-family: Montserrat; font-weight: 600; font-size: 14px; color: #4F3527; margin-bottom: 4px;">
               Type : <?= htmlspecialchars($bien['type']) ?>
@@ -194,16 +202,19 @@ $biens = getAllBiens();
             <button type="submit" name="supprimerBien" class="btn btn-danger mx-4">Supprimer</button>
           </form>
         </div>
+
       </div>
     </div>
   </div>
 <?php endforeach; ?>
 <!-- fin modal detail bien -->
 <!-- debut modal modifier -->
+
 <?php foreach ($biens as $bien): ?>
   <div class="modal fade" id="ModifierBienModal<?= $bien['idbien'] ?>" tabindex="-1" aria-labelledby="ModifierBienLabel<?= $bien['idbien'] ?>" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" style="
+
       width: 512px;
       height: 650px;
       margin: auto;
@@ -212,8 +223,10 @@ $biens = getAllBiens();
       border: none;
       border-radius: 8px;
     ">
+
         <div class="modal-header">
           <h5 class="modal-title w-100 text-center" id="ModifierBienLabel<?= $bien['idbien'] ?>" style="
+
           font-family: Montserrat;
           font-weight: bold;
           font-size: 24px;
@@ -246,6 +259,7 @@ $biens = getAllBiens();
               </select>
             </div>
 
+
             <div class="mb-3">
               <select class="form-select" name="status" style="background-color: #DDC7BB;">
                 <option disabled>Status</option>
@@ -265,6 +279,7 @@ $biens = getAllBiens();
             </div>
             <div class="text-center">
               <button type="submit" name="modifierBien" class="btn" style="
+
               width: 156px;
               height: 40px;
               background-color: #2B1B12;
@@ -282,6 +297,7 @@ $biens = getAllBiens();
       </div>
     </div>
   </div>
+
 <?php endforeach; ?>
 <!-- fin pour modal  bien -->
 <?php require_once("pied.php"); ?>
@@ -310,3 +326,4 @@ $biens = getAllBiens();
     });
   });
 </script>
+

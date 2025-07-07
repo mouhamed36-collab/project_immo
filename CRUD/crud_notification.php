@@ -1,4 +1,5 @@
 <?php
+
 require_once("con_db.php");
 
 // fonction pour ajouter une notification
