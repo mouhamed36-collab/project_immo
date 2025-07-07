@@ -55,12 +55,14 @@
 
     if ($utilisateur) {
       $_SESSION['utilisateur'] = $utilisateur;
+      $_SESSION['idutilisateur'] = $utilisateur['idutilisateur'];
 
       // On vérifie le rôle récupéré depuis le tableau utilisateur
       $role = $utilisateur['role'] ?? 'utilisateur';
 
       if ($role === 'admin') {
-        echo "<script>alert('Bienvenue Admin'); window.location.href = '../admin/dashboard.php';</script>";
+        header("Location: http://localhost/project_immo/pages/dashboard/gestion-utilisateur.php");
+        exit;
       } else {
         header("Location: http://localhost/project_immo/");
         exit;

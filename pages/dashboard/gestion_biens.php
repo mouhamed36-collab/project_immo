@@ -1,4 +1,5 @@
-<?php require_once("menu.php");
+<?php
+require_once("menu.php");
 include_once("../../CRUD/biendModel.php");
 $biens = getAllBiens();
 
@@ -12,7 +13,7 @@ $biens = getAllBiens();
 
   <!-- Barre de recherche + Bouton -->
   <div class="zone-recherche">
-    <input type="text" class="barre-recherche" placeholder="Rechercher une adresse..." />
+    <input type="text" class="barre-recherche" placeholder="Rechercher une adresse..." id="searchInput" />
     <button class="btn-ajouter" data-bs-toggle="modal" data-bs-target="#ajouterBienModal">Ajouter bien</button>
   </div>
 
@@ -43,7 +44,7 @@ $biens = getAllBiens();
   </div>
 </main>
 <!-- Modal pour ajouter bien -->
-<div class="modal fade" id="ajouterBienModal" tabindex="-1" aria-labelledby="ajouterBienLabel" >
+<div class="modal fade" id="ajouterBienModal" tabindex="-1" aria-labelledby="ajouterBienLabel">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="
       width: 512px;
@@ -87,7 +88,7 @@ $biens = getAllBiens();
               <option value="terrain">Terrain</option>
             </select>
           </div>
-            <div class="mb-3">
+          <div class="mb-3">
             <select required class="form-select" name="status" style="background-color: #DDC7BB;">
               <option selected disabled>Status</option>
               <option value="disponible">Disponible</option>
@@ -284,3 +285,28 @@ $biens = getAllBiens();
 <?php endforeach; ?>
 <!-- fin pour modal  bien -->
 <?php require_once("pied.php"); ?>
+
+<script>
+  // Script pour filtrer les lignes de la table selon l'adresse
+  document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('searchInput');
+    const rows = document.querySelectorAll('.tableau-biens tbody tr');
+
+    input.addEventListener('input', function() {
+      const filter = this.value.trim().toLowerCase();
+
+      rows.forEach(row => {
+        // Récupère le texte de la 3ᵉ cellule (<td>) qui contient le statut
+        const statutTd = row.cells[2];
+        const statutText = statutTd.textContent.trim().toLowerCase();
+
+        // Si l'adresse contient la chaîne filtrée, on affiche, sinon on masque
+        if (statutText.includes(filter)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

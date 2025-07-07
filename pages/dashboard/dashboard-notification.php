@@ -1,5 +1,4 @@
 <?php
-
 // Traitement du POST d'envoi de notification
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])) {
   require_once __DIR__ . '/../../CRUD/crud_notification.php';
