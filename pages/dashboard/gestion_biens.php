@@ -87,7 +87,14 @@ $biens = getAllBiens();
               <option value="terrain">Terrain</option>
             </select>
           </div>
-
+            <div class="mb-3">
+            <select required class="form-select" name="status" style="background-color: #DDC7BB;">
+              <option selected disabled>Status</option>
+              <option value="disponible">Disponible</option>
+              <option value="indisponible">Indisponible</option>
+              <option value="en visite">En visite</option>
+            </select>
+          </div>
           <div class="mb-3">
             <input type="number" required class="form-control" name="surface" placeholder="Surface (m²)" style="background-color: #DDC7BB;">
           </div>
@@ -164,6 +171,10 @@ $biens = getAllBiens();
               Surface : <?= htmlspecialchars($bien['surface']) ?> m²
             </p>
 
+            <p style="font-family: Montserrat; font-weight: 600; font-size: 14px; color: #4F3527; margin-bottom: 4px;">
+              Status : <?= htmlspecialchars($bien['status']) ?>
+            </p>
+
             <p style="font-family: Moul; font-size: 24px; color: #4F3527; font-weight: 400;">
               Prix : <?= number_format($bien['prix'], 0, ',', ' ') ?> FCFA
             </p>
@@ -233,7 +244,16 @@ $biens = getAllBiens();
                 <option value="terrain" <?= $bien['type'] == 'terrain' ? 'selected' : '' ?>>Terrain</option>
               </select>
             </div>
+
             <div class="mb-3">
+              <select class="form-select" name="status" style="background-color: #DDC7BB;">
+                <option disabled>Status</option>
+                <option value="disponible" <?= $bien['status'] == 'disponible' ? 'selected' : '' ?>>Disponible</option>
+                <option value="indisponible" <?= $bien['status'] == 'indisponible' ? 'selected' : '' ?>>Indisponible</option>
+                <option value="en visite" <?= $bien['status'] == 'en visite' ? 'selected' : '' ?>>En visite</option>
+              </select>
+            </div>
+            <div class="mb-3 mt-3">
               <input type="number" class="form-control" name="surface" value="<?= htmlspecialchars($bien['surface']) ?>" placeholder="Surface (m²)" style="background-color: #DDC7BB;">
             </div>
             <div class="mb-3">
