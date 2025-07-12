@@ -39,7 +39,7 @@ $biens = getAllBiens();
             <td><?php echo htmlspecialchars($bien['titre']); ?></td>
             <td><?php echo htmlspecialchars($bien['type']); ?></td>
             <td><?php echo htmlspecialchars($bien['localisation']); ?></td>
-            <td><span class="badge badge-visite"><?php echo ucfirst($bien['status']); ?></span></td>
+            <td><span class="badge badge-<?= $bien['status']=='en visite' ? "visite" : ucfirst($bien['status']) ?>"><?php echo ucfirst($bien['status']); ?></span></td>
             <td><img src="http://localhost/project_immo/CRUD/<?= $bien['photo'] ?>" class="img-bien" alt="bien"></td>
           </tr>
         <?php endforeach; ?>

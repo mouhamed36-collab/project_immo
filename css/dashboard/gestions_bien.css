@@ -1,35 +1,31 @@
+.tableau-biens td {
+    font-size: 12px;
+    vertical-align: middle;
+}
 
+.badge {
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    color: white;
+    cursor: pointer;
+}
 
-    .tableau-biens td {
-      font-size: 12px;
-      vertical-align: middle;
-    }
+.badge-visite {
+    background-color: #2F80ED;
+}
 
-    .badge {
-      padding: 2px 6px;
-      border-radius: 10px;
-      font-size: 11px;
-      color: white;
-      cursor: pointer;
-    }
+.badge-Disponible {
+    background-color: #2ED47A;
+}
 
-    .badge-visite {
-      background-color: #2F80ED;
-    }
+.badge-Indisponible {
+    background-color: #EB5757;
+}
 
-    .badge-dispo {
-      background-color: #2ED47A;
-    }
-
-    .badge-indispo {
-      background-color: #EB5757;
-    }
-
-    .img-bien {
-      width: 30px;
-      height: 30px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-
-   
+.img-bien {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 4px;
+}

@@ -28,11 +28,11 @@
         margin-bottom: 10px;
     }
     
-    .btn-disponible {
+    .Disponible {
         width: 176px;
         height: 47px;
         border-radius: 20px;
-        background-color: #CFF7D3;
+        background-color: #2ED47A;
         font-family: 'Montserrat', sans-serif;
         font-style: italic;
         font-weight: 500;
@@ -42,11 +42,11 @@
         margin-bottom: 20px;
     }
     
-    .indisponible {
+    .Indisponible {
         width: 176px;
         height: 47px;
         border-radius: 20px;
-        background-color: #e91212;
+        background-color: #EB5757;
         font-family: 'Montserrat', sans-serif;
         font-style: italic;
         font-weight: 500;
@@ -54,6 +54,13 @@
         color: #4F3527;
         border: none;
         margin-bottom: 20px;
+    }
+    
+    .Visite {
+        width: 176px;
+        height: 47px;
+        border-radius: 20px;
+        background-color: #2F80ED;
     }
     
     .localisation {

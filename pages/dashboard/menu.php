@@ -1,4 +1,6 @@
 <?php
+require_once '../../CRUD/con_db.php';
+require_once '../../CRUD/crud_utilisateur.php';
 session_start();
 
 // Vérifie que la session contient un utilisateur et que son rôle est admin
@@ -6,6 +8,8 @@ if (!isset($_SESSION['utilisateur']) || $_SESSION['utilisateur']['role'] !== 'ad
   header('Location: ../../pages/page de connexion.php');
   exit;
 }
+$id = $_SESSION['utilisateur']['idutilisateur'];
+$info = recupererUtilisateurParId($id);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,8 +41,8 @@ if (!isset($_SESSION['utilisateur']) || $_SESSION['utilisateur']['role'] !== 'ad
       <div class="menu-profil">
         <img src="http://localhost/project_immo/asset/img/profil.jpg" alt="Photo utilisateur" class="profil-photo">
         <div class="profil-info">
-          <div class="profil-nom">Nom utilisateur</div>
-          <div class="profil-email">email@exemple.com</div>
+          <div class="profil-nom"><?= $info['nom'] ?></div>
+          <div class="profil-email"><?= $info['email'] ?></div>
         </div>
       </div>
 

@@ -28,6 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['envoyer'])) {
 require_once("menu.php"); ?>
 
 <!-- CONTENU PRINCIPAL -->
+
+<head>
+  <link rel="stylesheet" href="../../css/dashboard/dashboard-notification.css">
+</head>
 <main class="contenu-dashboard">
   <h1 class="titre-dashboard">Gestion des Notification</h1>
   <hr class="separateur" />
@@ -74,10 +78,10 @@ require_once("menu.php"); ?>
             $classeBadge = '';
             switch ($statut) {
               case 'non lu':
-                $classeBadge = 'badge-dispo'; // vert
+                $classeBadge = 'badge-nonlu'; // vert
                 break;
               case 'lu':
-                $classeBadge = 'badge-indispo'; // rouge
+                $classeBadge = 'badge-lu'; // rouge
                 break;
               default:
                 $classeBadge = 'badge-secondary'; // Gris par défaut
