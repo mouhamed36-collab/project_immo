@@ -21,7 +21,7 @@ function ajout_notif($contenu, $typenotif, $idutilisateur)
 function get_notif()
 {
     global $con;
-    $req = "SELECT * FROM notifications";
+    $req = "SELECT * FROM notifications ORDER BY idnotif DESC";
     $result = $con->query($req);
 
     if ($result) {

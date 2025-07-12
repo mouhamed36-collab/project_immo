@@ -50,6 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['action'])) {
 // Puis on affiche le reste de la page
 require_once("menu.php");
 ?>
+
+<head>
+  <link rel="stylesheet" href="../../css/dashboard/gestions_visite.css">
+</head>
 <main class="contenu-dashboard">
   <h1 class="titre-dashboard">Gestion des Visites</h1>
   <hr class="separateur" />
@@ -80,7 +84,6 @@ require_once("menu.php");
         $visites = getVisites();
         if ($visites) {
           foreach ($visites as $v) {
-
             $bien   = getnomBien($v['idbien']) . ', ' . getlocationBien($v['idbien']);
 
             $client = getnomUtilisateur($v['idutilisateur']);
@@ -91,13 +94,13 @@ require_once("menu.php");
             $classeBadge = '';
             switch ($statut) {
               case 'planifier':
-                $classeBadge = 'badge-dispo'; // Jaune
+                $classeBadge = 'badge-planifier'; // Jaune
                 break;
               case 'en visite':
-                $classeBadge = 'badge-visite'; // Bleu clair
+                $classeBadge = 'badge-encours'; // Bleu clair
                 break;
               case 'visiter':
-                $classeBadge = 'badge-indispo'; // Vert
+                $classeBadge = 'badge-visiter'; // Vert
                 break;
               default:
                 $classeBadge = 'badge-secondary'; // Gris par défaut
