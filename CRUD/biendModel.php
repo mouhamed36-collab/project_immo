@@ -1,5 +1,5 @@
-<?php
 
+<?php
 require_once("con_db.php");
 
 // 1. Configuration du dossier d'upload

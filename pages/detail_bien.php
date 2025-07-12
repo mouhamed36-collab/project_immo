@@ -68,9 +68,7 @@ if (isset($_POST['envoyer_visite'])) {
       <!-- Infos hébergement -->
       <div class="hebergement-info">
         <div class="hebergement-titre"><?= $bien['titre'] ?></div>
-
         <button class="<?= $bien['status']=='en visite' ? "visite" : ucfirst($bien['status']) ?>"><?= ucfirst($bien['status']) ?></button>
-
         <div class="localisation">
           <i class="bi bi-geo-alt-fill"></i> <?= htmlspecialchars($bien['localisation']) ?>
         </div>
